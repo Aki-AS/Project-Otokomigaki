@@ -5,16 +5,289 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="theme-color" content="#000000">
-  <script type="text/javascript" src="script.js"></script>
+  <style>
+    .box {
+      width: 80px;
+      height: 80px;
+      border: 2px solid #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+    }
+  </style>
+
+  <style>
+    .container {
+      display: flex;
+    }
+
+    .column {
+      flex: 2;
+    }
+  </style>
 </head>
+
 
 <link rel="stylesheet" type="text/css" href="style.css" />
 
 <body>
   <h1>＜訓練生やることリスト＞</h1>
-  <h2></h2>
-  <h2></h2>
-  <h3></h3>
-</body>
+  <div>
+    ＜毎日＞
+    <form>
+      <label>
+        <input type="checkbox" id="chkKinntai" name="option1" value="1">
+        勤怠申請はしましたか？
+      </label><br>
+
+      <label>
+        <input type="checkbox" id="chkTennkai" name="option2" value="2">
+        Teamsの展開事項を確認しましたか？
+      </label><br>
+      <label>
+        <input type="checkbox" id="chkMeru" name="option3" value="3">
+        メールは確認しましたか？
+      </label><br>
+      <button type="submit" id="chkkannryou">送信</button>
+    </form>
+    ＜毎月＞
+    <div>
+      <form>
+        <lavel>
+          <input type="checkbox" id="chkGetumatu" name="option1" value="4">
+          勤怠の月末申請はしましたか？<br>
+          <input type="checkbox" id="chkWellcheck" name="option2" value="5">
+          Well being チェックは送信しましたか？<br>
+          <button type="submit" id="chkGetumatukannryou">送信</button>
+      </form>
+
+
+
+
+
+
+
+
+      <div>
+        <h1 class="tennkaijikou">~展開事項~</h1>
+      </div><br>
+      <div>
+        <h1 class="week">~一週間のHRの流れ~</h1><br>
+        <div style="margin-left: 142px;">
+          MON &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; TUE &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+          &emsp; &emsp; WED &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; THU &emsp; &emsp; &emsp; &emsp;
+          &emsp; &emsp; &emsp; &emsp; FRI
+        </div> <br>
+
+        <div class="container">
+          <div class="column" style="margin-left: 80px; width: 10px;padding: 35px;  border: 1px solid #333333;">
+            <p id="selectedValue"></p>
+          </div>
+          <div class="column" style="width: 10px;padding: 35px;  border: 1px solid #333333;">
+            <p id="selectedValue2"></p>
+          </div>
+
+          <div class="column" style="margin-left: 295px; width: 6px;padding: 35px;  border: 1px solid #333333;">
+            <p id="selectedValue3"></p>
+          </div>
+          <div class="column" style="margin-left: 372px; width: 6px;padding: 35px;  border: 1px solid #333333;">
+            <p id="selectedValue4"></p>
+          </div>
+
+          <div class="column" style="margin-left: 495px; width: 4px;padding: 35px;  border: 1px solid #333333;">
+            <p id="selectedValue5"></p>
+          </div>
+          <div class="column" style="margin-left: 570px; width: 4px;padding: 35px;  border: 1px solid #333333;">
+            <p id="selectedValue6"></p>
+          </div>
+
+          <div class="column" style="margin-left: 495px; width: 4px;padding: 35px;  border: 1px solid #333333;">
+            <p id="selectedValue7"></p>
+          </div>
+          <div class="column" style="margin-left: 495px; width: 4px;padding: 35px;  border: 1px solid #333333;">
+            <p id="selectedValue8"></p>
+          </div>
+
+          <div class="column" style="margin-left: 495px; width: 4px;padding: 35px;  border: 1px solid #333333;">
+            <p id="selectedValue9"></p>
+          </div>
+          <div class="column" style="margin-left: 495px; width: 4px;padding: 35px;  border: 1px solid #333333;">
+            <p id="selectedValue10"></p>
+          </div>
+
+        </div><br>
+
+
+        <button onclick="toggleDropdown()">編集</button>
+        <div id="myDropdown" class="dropdown-content" style="display: none;">
+          <label for="mySelect">（月） 午前:</label>
+          <select id="mySelect" onchange="displaySelectedValue()">
+            <option value="1"></option>
+            <option value="2">HR</option>
+            <option value="3">朝礼</option>
+            <option value="4">Teams会議</option>
+            <option value="5">安全展開</option>
+          </select>
+
+          <label for="mySelect2">午後:</label>
+          <select id="mySelect2" onchange="displaySelectedValue()">
+            <option value="1"></option>
+            <option value="2">HR</option>
+            <option value="3">T走</option>
+            <option value="4">委員会</option>
+            <option value="5">昼礼</option>
+          </select>
+
+          <label for="mySelect3">(火) 午前:</label>
+          <select id="mySelect3" onchange="displaySelectedValue()">
+            <option value="1"></option>
+            <option value="2">HR</option>
+            <option value="3">朝礼</option>
+            <option value="4">Teams会議</option>
+            <option value="5">安全展開</option>
+          </select>
+
+          <label for="mySelect4">午後:</label>
+          <select id="mySelect4" onchange="displaySelectedValue()">
+            <option value="1"></option>
+            <option value="2">HR</option>
+            <option value="3">T走</option>
+            <option value="4">委員会</option>
+            <option value="5">昼礼</option>
+          </select>
+
+          <label class="ai" for="mySelect5">(水) 午前:</label>
+          <select id="mySelect5" onchange="displaySelectedValue()">
+            <option value="1"></option>
+            <option value="2">HR</option>
+            <option value="3">朝礼</option>
+            <option value="4">Teams会議</option>
+            <option value="5">安全展開</option>
+          </select>
+
+          <label for="mySelect6">午後:</label>
+          <select id="mySelect6" onchange="displaySelectedValue()">
+            <option value="1"></option>
+            <option value="2">HR</option>
+            <option value="3">T走</option>
+            <option value="4">委員会</option>
+            <option value="5">昼礼</option>
+          </select>
+
+          <label for="mySelect7">(木) 午前:</label>
+          <select id="mySelect7" onchange="displaySelectedValue()">
+            <option value="1"></option>
+            <option value="2">HR</option>
+            <option value="3">朝礼</option>
+            <option value="4">Teams会議</option>
+            <option value="5">安全展開</option>
+          </select>
+
+          <label for="mySelect8">午後:</label>
+          <select id="mySelect8" onchange="displaySelectedValue()">
+            <option value="1"></option>
+            <option value="2">HR</option>
+            <option value="3">T走</option>
+            <option value="4">委員会</option>
+            <option value="5">昼礼</option>
+          </select>
+
+          <label for="mySelect9">(金) 午前:</label>
+          <select id="mySelect9" onchange="displaySelectedValue()">
+            <option value="1"></option>
+            <option value="2">HR</option>
+            <option value="3">朝礼</option>
+            <option value="4">Teams会議</option>
+            <option value="5">安全展開</option>
+          </select>
+
+          <label for="mySelect10">午後:</label>
+          <select id="mySelect10" onchange="displaySelectedValue()">
+            <option value="1"></option>
+            <option value="2">HR</option>
+            <option value="3">T走</option>
+            <option value="4">委員会</option>
+            <option value="5">昼礼</option>
+          </select>
+        </div>
+        <p class=a id="selectedValue"></p>
+        <p id="selectedValue2"></p>
+        <p id="selectedValue3"></p>
+        <p id="selectedValue4"></p>
+        <p id="selectedValue5"></p>
+        <p id="selectedValue6"></p>
+        <p id="selectedValue7"></p>
+        <p id="selectedValue8"></p>
+        <p id="selectedValue9"></p>
+        <p id="selectedValue10"></p>
+      </div>
+      <div>
+        <h1 class="carender">~カレンダー~</h1>
+      </div>
+      <div class="calendar-wrap">
+        <table class="calendar">
+          <thead>
+            <tr>
+              <th class="sun">Sun</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+              <th class="sat">Sat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="mute">29</td>
+              <td class="mute">30</td>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td class="off">7</td>
+              <td>8</td>
+              <td>9</td>
+              <td>10</td>
+              <td>11</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td class="today">13</td>
+              <td class="off">14</td>
+              <td>15</td>
+              <td>16</td>
+              <td>17</td>
+              <td>18</td>
+              <td>19</td>
+            </tr>
+            <tr>
+              <td>20</td>
+              <td class="off">21</td>
+              <td>22</td>
+              <td>23</td>
+              <td>24</td>
+              <td>25</td>
+              <td>26</td>
+            </tr>
+            <tr>
+              <td>27</td>
+              <td class="off">28</td>
+              <td>29</td>
+              <td>30</td>
+              <td>31</td>
+              <td class="mute">1</td>
+              <td class="mute">2</td>
+            </tr>
+          </tbody>
+
+      </div>
+
+      <script src="script.js" defer></script>
 
 </html>

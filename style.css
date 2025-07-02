@@ -1,11 +1,172 @@
-
 h1 {
-    width: 1000px;
-    height: 300px;
-    text-align:  center;        /* 中央寄せ */
+    /* width: 1000px;
+    height: 300px; */
+    text-align: center;
+    /* 中央寄せ */
     background-color: navajowhite;
+}
+
+.tennkaijikou {
+    text-align: center;
+}
+
+.week {
     text-align: center;
 }
 
 
 
+
+
+dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd
+}
+
+.a {
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+
+;
+
+
+.b {
+    font-size: 50px;
+    position: relative;
+    top: 50px;
+    left: 10000px;
+}
+
+.c {
+    font-size: 50px;
+    position: relative;
+    top: 50px;
+    left: 10000px;
+}
+
+.d {
+    font-size: 50px;
+    position: relative;
+    top: 50px;
+    left: 10000px;
+}
+
+.e {
+    font-size: 50px;
+    position: relative;
+    top: 50px;
+    left: 10000px;
+}
+
+.f {
+    font-size: 50px;
+    position: relative;
+    top: 50px;
+    left: 10000px;
+}
+
+.g {
+    font-size: 50px;
+    position: relative;
+    top: 50px;
+    left: 10000px;
+}
+
+.h {
+    font-size: 50px;
+    position: relative;
+    top: 50px;
+    left: 10000px;
+}
+
+.i {
+    font-size: 50px;
+    position: relative;
+    top: 50px;
+    left: 10000px;
+}
+
+.j {
+    font-size: 50px;
+    position: relative;
+    top: 50px;
+    left: 10000px;
+}
+
+.sample1 {
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+}
+
+.item {
+    text-align: center;
+    line-height: 100px;
+    width: 30%;
+    height: 100px;
+    background-color: #666;
+}
+
+
+
+
+
+.carendar {
+    text-align: center;
+}
+
+
+
+.calendar-wrap {
+    margin: 0 auto;
+    max-width: 1110px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+
+@media (max-width: 767.98px) {
+    .calendar-wrap {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+.calendar th,
+.calendar td {
+    border: 1px solid #000;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.calendar th {
+    padding: 6px 10px;
+}

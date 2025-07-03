@@ -1,10 +1,152 @@
+#haaikei {
+    text-align: center;
+
+}
+
+
+
+#haikei {
+    background-color: rgba(223, 188, 101, 0.854);
+    width: 700px;
+    height: 500px;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#Haikei {
+    width: 800px;
+    background-color: rgb(253, 253, 253);
+    height: 200px;
+    align-items: center;
+    font-size: large;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#t {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#saigo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#w {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#katamari {
+    background-color: #fff;
+    width: 1170px;
+    height: 00px;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#o {
+    background-color: #fff;
+    width: 600px;
+    height: 200px;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#issyuukann {
+    background-color: #fff;
+    width: 1170px;
+    height: 300px;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#contebox {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+#nagare {
+    background-color: rgba(223, 188, 101, 0.854);
+    width: 1200px;
+    height: 500px;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+
+
+#HAIkei {
+    width: 1500px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#HAikei {
+    /* background-color: rgb(255, 255, 255); */
+    /* width: 1000px;
+    height: 150px; */
+    align-items: center;
+    font-size: large;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+#kokubann {
+    background-color: #36693a;
+}
+
+#kai {
+    font-size: 30px;
+}
+
+
 h1 {
     /* width: 1000px;
     height: 300px; */
     text-align: center;
     /* 中央寄せ */
     background-color: navajowhite;
+
 }
+
+
+#kekka {
+    align-items: center;
+    background-color: rgb(241, 202, 72);
+    border-radius: 10px;
+    /* display: flex; */
+    justify-content: center;
+}
+
+
+#chkkannryou {
+    background-color: rgb(185, 185, 211);
+}
+
+#chkGetumatukannryou {
+    background-color: rgb(185, 185, 211);
+}
+
 
 .tennkaijikou {
     text-align: center;
@@ -17,8 +159,13 @@ h1 {
 
 
 
+#tennkaijikou {
+    text-align: left;
+}
 
-dropdown-content {
+
+
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -38,77 +185,6 @@ dropdown-content {
     background-color: #ddd
 }
 
-.a {
-    display: flex;
-    align-items: center;
-    height: 100px;
-}
-
-;
-
-
-.b {
-    font-size: 50px;
-    position: relative;
-    top: 50px;
-    left: 10000px;
-}
-
-.c {
-    font-size: 50px;
-    position: relative;
-    top: 50px;
-    left: 10000px;
-}
-
-.d {
-    font-size: 50px;
-    position: relative;
-    top: 50px;
-    left: 10000px;
-}
-
-.e {
-    font-size: 50px;
-    position: relative;
-    top: 50px;
-    left: 10000px;
-}
-
-.f {
-    font-size: 50px;
-    position: relative;
-    top: 50px;
-    left: 10000px;
-}
-
-.g {
-    font-size: 50px;
-    position: relative;
-    top: 50px;
-    left: 10000px;
-}
-
-.h {
-    font-size: 50px;
-    position: relative;
-    top: 50px;
-    left: 10000px;
-}
-
-.i {
-    font-size: 50px;
-    position: relative;
-    top: 50px;
-    left: 10000px;
-}
-
-.j {
-    font-size: 50px;
-    position: relative;
-    top: 50px;
-    left: 10000px;
-}
 
 .sample1 {
     display: flex;
@@ -125,48 +201,63 @@ dropdown-content {
 }
 
 
+.box {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
 
 
 
-.carendar {
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd
+}
+
+
+.sample1 {
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+}
+
+.item {
     text-align: center;
+    line-height: 100px;
+    width: 30%;
+    height: 100px;
+    background-color: #666;
 }
 
-
-
-.calendar-wrap {
-    margin: 0 auto;
-    max-width: 1110px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+#contebox {
+    display: flex;
 }
 
+.Weekday {
 
-@media (max-width: 767.98px) {
-    .calendar-wrap {
-        display: flex;
-        flex-direction: column;
-    }
+    font-size: 16px;
 }
 
-
-.calendar {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-
-.calendar th,
-.calendar td {
-    border: 1px solid #000;
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-
-.calendar th {
-    padding: 6px 10px;
+.WBOX {
+    display: flex;
+    margin-right: 60px;
 }

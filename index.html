@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="theme-color" content="#000000">
+  <meta name="viewport" contect="width=device-width,initial-scale=1.0">
+  <title>訓練生向け掲示板</title>
   <style>
     .box {
       width: 80px;
@@ -23,7 +25,49 @@
     }
 
     .column {
-      flex: 2;
+      flex: 0;
+    }
+  </style>
+
+  <style>
+    .container1 {
+      display: flex;
+    }
+
+    .column1 {
+      flex: 0;
+    }
+  </style>
+
+
+  <style>
+    .container2 {
+      display: flex;
+    }
+
+    .column2 {
+      flex: 0;
+    }
+  </style>
+
+  <style>
+    .container3 {
+      display: flex;
+    }
+
+    .column {
+      flex: 0;
+    }
+  </style>
+
+
+  <style>
+    .container4 {
+      display: flex;
+    }
+
+    .column {
+      flex: 0;
     }
   </style>
 </head>
@@ -32,262 +76,293 @@
 <link rel="stylesheet" type="text/css" href="style.css" />
 
 <body>
-  <h1>＜訓練生やることリスト＞</h1>
-  <div>
-    ＜毎日＞
-    <form>
-      <label>
-        <input type="checkbox" id="chkKinntai" name="option1" value="1">
-        勤怠申請はしましたか？
-      </label><br>
+  <div id="kokubann">
+    <div id="haaikei">
+      <h1>＜訓練生やることリスト＞</h1>
+    </div>
+    <div style="width: 700px; margin: 0 auto;">
+      <div id="haikei">
+        <div>📌</div>
+        <br>
+        ＜毎日＞
+        <form>
+          <label>
+            <input type="checkbox" id="chkKinntai" name="option1" value="1">
+            勤怠申請はしましたか？
+          </label><br>
 
-      <label>
-        <input type="checkbox" id="chkTennkai" name="option2" value="2">
-        Teamsの展開事項を確認しましたか？
-      </label><br>
-      <label>
-        <input type="checkbox" id="chkMeru" name="option3" value="3">
-        メールは確認しましたか？
-      </label><br>
-      <button type="submit" id="chkkannryou">送信</button>
-    </form>
-    ＜毎月＞
-    <div>
-      <form>
-        <lavel>
-          <input type="checkbox" id="chkGetumatu" name="option1" value="4">
-          勤怠の月末申請はしましたか？<br>
-          <input type="checkbox" id="chkWellcheck" name="option2" value="5">
-          Well being チェックは送信しましたか？<br>
-          <button type="submit" id="chkGetumatukannryou">送信</button>
-      </form>
-
-
-
-
-
-
-
-
-      <div>
-        <h1 class="tennkaijikou">~展開事項~</h1>
-      </div><br>
-      <div>
-        <h1 class="week">~一週間のHRの流れ~</h1><br>
-        <div style="margin-left: 142px;">
-          MON &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; TUE &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
-          &emsp; &emsp; WED &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; THU &emsp; &emsp; &emsp; &emsp;
-          &emsp; &emsp; &emsp; &emsp; FRI
-        </div> <br>
-
-        <div class="container">
-          <div class="column" style="margin-left: 80px; width: 10px;padding: 35px;  border: 1px solid #333333;">
-            <p id="selectedValue"></p>
-          </div>
-          <div class="column" style="width: 10px;padding: 35px;  border: 1px solid #333333;">
-            <p id="selectedValue2"></p>
-          </div>
-
-          <div class="column" style="margin-left: 295px; width: 6px;padding: 35px;  border: 1px solid #333333;">
-            <p id="selectedValue3"></p>
-          </div>
-          <div class="column" style="margin-left: 372px; width: 6px;padding: 35px;  border: 1px solid #333333;">
-            <p id="selectedValue4"></p>
-          </div>
-
-          <div class="column" style="margin-left: 495px; width: 4px;padding: 35px;  border: 1px solid #333333;">
-            <p id="selectedValue5"></p>
-          </div>
-          <div class="column" style="margin-left: 570px; width: 4px;padding: 35px;  border: 1px solid #333333;">
-            <p id="selectedValue6"></p>
-          </div>
-
-          <div class="column" style="margin-left: 495px; width: 4px;padding: 35px;  border: 1px solid #333333;">
-            <p id="selectedValue7"></p>
-          </div>
-          <div class="column" style="margin-left: 495px; width: 4px;padding: 35px;  border: 1px solid #333333;">
-            <p id="selectedValue8"></p>
-          </div>
-
-          <div class="column" style="margin-left: 495px; width: 4px;padding: 35px;  border: 1px solid #333333;">
-            <p id="selectedValue9"></p>
-          </div>
-          <div class="column" style="margin-left: 495px; width: 4px;padding: 35px;  border: 1px solid #333333;">
-            <p id="selectedValue10"></p>
-          </div>
-
-        </div><br>
-
-
-        <button onclick="toggleDropdown()">編集</button>
-        <div id="myDropdown" class="dropdown-content" style="display: none;">
-          <label for="mySelect">（月） 午前:</label>
-          <select id="mySelect" onchange="displaySelectedValue()">
-            <option value="1"></option>
-            <option value="2">HR</option>
-            <option value="3">朝礼</option>
-            <option value="4">Teams会議</option>
-            <option value="5">安全展開</option>
-          </select>
-
-          <label for="mySelect2">午後:</label>
-          <select id="mySelect2" onchange="displaySelectedValue()">
-            <option value="1"></option>
-            <option value="2">HR</option>
-            <option value="3">T走</option>
-            <option value="4">委員会</option>
-            <option value="5">昼礼</option>
-          </select>
-
-          <label for="mySelect3">(火) 午前:</label>
-          <select id="mySelect3" onchange="displaySelectedValue()">
-            <option value="1"></option>
-            <option value="2">HR</option>
-            <option value="3">朝礼</option>
-            <option value="4">Teams会議</option>
-            <option value="5">安全展開</option>
-          </select>
-
-          <label for="mySelect4">午後:</label>
-          <select id="mySelect4" onchange="displaySelectedValue()">
-            <option value="1"></option>
-            <option value="2">HR</option>
-            <option value="3">T走</option>
-            <option value="4">委員会</option>
-            <option value="5">昼礼</option>
-          </select>
-
-          <label class="ai" for="mySelect5">(水) 午前:</label>
-          <select id="mySelect5" onchange="displaySelectedValue()">
-            <option value="1"></option>
-            <option value="2">HR</option>
-            <option value="3">朝礼</option>
-            <option value="4">Teams会議</option>
-            <option value="5">安全展開</option>
-          </select>
-
-          <label for="mySelect6">午後:</label>
-          <select id="mySelect6" onchange="displaySelectedValue()">
-            <option value="1"></option>
-            <option value="2">HR</option>
-            <option value="3">T走</option>
-            <option value="4">委員会</option>
-            <option value="5">昼礼</option>
-          </select>
-
-          <label for="mySelect7">(木) 午前:</label>
-          <select id="mySelect7" onchange="displaySelectedValue()">
-            <option value="1"></option>
-            <option value="2">HR</option>
-            <option value="3">朝礼</option>
-            <option value="4">Teams会議</option>
-            <option value="5">安全展開</option>
-          </select>
-
-          <label for="mySelect8">午後:</label>
-          <select id="mySelect8" onchange="displaySelectedValue()">
-            <option value="1"></option>
-            <option value="2">HR</option>
-            <option value="3">T走</option>
-            <option value="4">委員会</option>
-            <option value="5">昼礼</option>
-          </select>
-
-          <label for="mySelect9">(金) 午前:</label>
-          <select id="mySelect9" onchange="displaySelectedValue()">
-            <option value="1"></option>
-            <option value="2">HR</option>
-            <option value="3">朝礼</option>
-            <option value="4">Teams会議</option>
-            <option value="5">安全展開</option>
-          </select>
-
-          <label for="mySelect10">午後:</label>
-          <select id="mySelect10" onchange="displaySelectedValue()">
-            <option value="1"></option>
-            <option value="2">HR</option>
-            <option value="3">T走</option>
-            <option value="4">委員会</option>
-            <option value="5">昼礼</option>
-          </select>
+          <label>
+            <input type="checkbox" id="chkTennkai" name="option2" value="2">
+            Teamsの展開事項を確認しましたか？
+          </label><br>
+          <label>
+            <input type="checkbox" id="chkMeru" name="option3" value="3">
+            メールは確認しましたか？<br>
+          </label><br>
+          <button type="submit" id="chkkannryou">送信</button>
+        </form>
+        <br>
+        <br>
+        ＜毎月＞
+        <div>
+          <form>
+            <lavel>
+              <input type="checkbox" id="chkGetumatu" name="option1" value="4">
+              勤怠の月末申請はしましたか？<br>
+              <input type="checkbox" id="chkWellcheck" name="option2" value="5">
+              Well being チェックは送信しましたか？<br>
+              <br>
+              <button type="submit" id="chkGetumatukannryou">送信</button>
+              <script src="yarukotorisutoscript.js"></script>
+          </form>
         </div>
-        <p class=a id="selectedValue"></p>
-        <p id="selectedValue2"></p>
-        <p id="selectedValue3"></p>
-        <p id="selectedValue4"></p>
-        <p id="selectedValue5"></p>
-        <p id="selectedValue6"></p>
-        <p id="selectedValue7"></p>
-        <p id="selectedValue8"></p>
-        <p id="selectedValue9"></p>
-        <p id="selectedValue10"></p>
       </div>
-      <div>
-        <h1 class="carender">~カレンダー~</h1>
-      </div>
-      <div class="calendar-wrap">
-        <table class="calendar">
-          <thead>
-            <tr>
-              <th class="sun">Sun</th>
-              <th>Mon</th>
-              <th>Tue</th>
-              <th>Wed</th>
-              <th>Thu</th>
-              <th>Fri</th>
-              <th class="sat">Sat</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="mute">29</td>
-              <td class="mute">30</td>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td class="off">7</td>
-              <td>8</td>
-              <td>9</td>
-              <td>10</td>
-              <td>11</td>
-              <td>12</td>
-            </tr>
-            <tr>
-              <td class="today">13</td>
-              <td class="off">14</td>
-              <td>15</td>
-              <td>16</td>
-              <td>17</td>
-              <td>18</td>
-              <td>19</td>
-            </tr>
-            <tr>
-              <td>20</td>
-              <td class="off">21</td>
-              <td>22</td>
-              <td>23</td>
-              <td>24</td>
-              <td>25</td>
-              <td>26</td>
-            </tr>
-            <tr>
-              <td>27</td>
-              <td class="off">28</td>
-              <td>29</td>
-              <td>30</td>
-              <td>31</td>
-              <td class="mute">1</td>
-              <td class="mute">2</td>
-            </tr>
-          </tbody>
+    </div>
 
-      </div>
 
-      <script src="script.js" defer></script>
+
+
+
+    <div>
+      <h1 class="tennkaijikou">~展開事項~</h1>
+    </div><br>
+
+
+    <div id="t">
+      <div id="HAIkei">
+        <div id="Haikei">
+          <div>
+            <p>入力<br>
+              <input id="nyuuryoku" type="text" size="100">
+            </p>
+            <p id="hennkou"><input type="button" value="変更" id="button2">
+            </p>
+          </div>
+        </div><br>
+      </div>
+    </div>
+    <div><br>
+      <div id="HAikei">
+        <div>
+          <div id="kai">展開事項</div>
+          <div style="width: 1000px; margin: 0 auto;">
+            <div id="allclear"><input type="button" value="クリア"></div><br>
+            <div id="kekka">
+              <div id="tennkaijikou"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div>
+      <h1 class="week">~一週間のHRの流れ~</h1><br>
+
+      <script src="tennkaijikou.js"></script>
+    </div><br>
+
+
+
+
+
+
+    <div id="saigo">
+      <div id="nagare"><br>
+        <div>📌</div>
+        <p>～１週間の流れ～</p>
+
+
+        <!-- 曜日 -->
+        <div id="w">
+          <div id="issyuukann" style="width: 1170px; margin: 0 auto;">
+            <div id="contebox">
+              <div>
+                <h2 class="Weekday">
+                  MON
+                </h2>
+
+                <div class="WBOX">
+                  <div class="column" style="width: 18px; padding: 35px ; height: 100px;  border: 1px solid #333333;"
+                    id="selectedValue"></div>
+                  <div class="column" style="width: 18px; padding: 35px; height: 100px; border: 1px solid #333333;"
+                    id="selectedValue2"></div>
+                </div>
+              </div>
+
+              <div>
+                <h2 class="Weekday">
+                  TUE
+                </h2>
+                <div class="WBOX">
+                  <div class="column1" style="width: 18px; padding: 35px; height: 100px; border: 1px solid #333333;"
+                    id="selectedValue3"></div>
+                  <div class="column1" style="width: 18px; padding: 35px; height: 100px; border: 1px solid #333333;"
+                    id="selectedValue4"></div>
+                </div>
+              </div>
+
+              <div>
+                <h2 class="Weekday">
+                  WED
+                </h2>
+                <div class="WBOX">
+                  <div class="column2" style="width: 18px; padding: 35px; height: 100px; border: 1px solid #333333;"
+                    id="selectedValue5"></div>
+                  <div class="column2" style="width: 18px; padding: 35px; height: 100px; border: 1px solid #333333;"
+                    id="selectedValue6"></div>
+                </div>
+              </div>
+
+              <div>
+                <h2 class="Weekday">
+                  THU
+                </h2>
+                <div class="WBOX">
+                  <div class="column3" style="width: 18px;padding: 35px; height: 100px; border: 1px solid #333333;"
+                    id="selectedValue7"></div>
+                  <div class="column3" style="width: 18px;padding: 35px; height: 100px; border: 1px solid #333333;"
+                    id="selectedValue8"></div>
+                </div>
+              </div>
+
+              <div>
+                <h2 class="Weekday">
+                  FRI
+                </h2>
+                <div class="WBOX">
+                  <div class="column4" style="width: 18px;padding: 35px; height: 100px; border: 1px solid #333333;"
+                    id="selectedValue9"></div>
+                  <div class="column4" style="width: 18px;padding: 35px; height: 100px; border: 1px solid #333333;"
+                    id="selectedValue10"></div>
+                </div>
+              </div>
+            </div> <br>
+
+
+
+            <button type="button" onclick="toggleDropdown()">編集</button>
+            <div id="myDropdown" class="dropdown-content" style="display: none;">
+
+              <div class="container2">
+                <p>
+                  <label class="column2" for="mySelect">午前</label> <br>
+                  <select id="mySelect" onchange="displaySelectedValue()">
+                    <option value="1"></option>
+                    <option value="2">H R</option>
+                    <option value="3">朝礼</option>
+                    <option value="4">会議</option>
+                    <option value="5">安全展開</option>
+                  </select>
+                </p>
+
+                <p>
+                  <label class="column2" for="mySelect2">&emsp;&nbsp; 午後</label> <br>
+                  <select style="margin-left: 8px;" id="mySelect2" onchange="displaySelectedValue()">
+                    <option value="1"></option>
+                    <option value="2">H R</option>
+                    <option value="3">走り込み</option>
+                    <option value="4">委員会</option>
+                    <option value="5">昼礼</option>
+                  </select>
+                </p>
+
+                <p>
+                  <label style="margin-left: 110px;" class="column2" for="mySelect3">午前</label> <br>
+                  <select style="margin-left: 116px;" id="mySelect3" onchange="displaySelectedValue()">
+                    <option value="1"></option>
+                    <option value="2">H R</option>
+                    <option value="3">朝礼</option>
+                    <option value="4">会議</option>
+                    <option value="5">安全展開</option>
+                  </select>
+                </p>
+
+                <p>
+                  <label style="margin-left: 30px;" class="column2" for="mySelect4">午後</label> <br>
+                  <select style="margin-left: 11px;" id="mySelect4" onchange="displaySelectedValue()">
+                    <option value="1"></option>
+                    <option value="2">H R</option>
+                    <option value="3">走り込み</option>
+                    <option value="4">委員会</option>
+                    <option value="5">昼礼</option>
+                  </select>
+                </p>
+
+                <p>
+                  <label style="margin-left: 120px;" class="column2" for="mySelect5">午前</label> <br>
+                  <select style="margin-left: 115px;" id="mySelect5" onchange="displaySelectedValue()">
+                    <option value="1"></option>
+                    <option value="2">H R</option>
+                    <option value="3">朝礼</option>
+                    <option value="4">会議</option>
+                    <option value="5">安全展開</option>
+                  </select>
+                </p>
+
+                <p>
+                  <label style="margin-left: 30px;" class="column2" for="mySelect6">午後</label> <br>
+                  <select style="margin-left: 10px;" id="mySelect6" onchange="displaySelectedValue()">
+                    <option value="1"></option>
+                    <option value="2">H R</option>
+                    <option value="3">走り込み</option>
+                    <option value="4">委員会</option>
+                    <option value="5">昼礼</option>
+                  </select>
+                </p>
+
+                <p>
+                  <label style="margin-left: 116px;" class="column2" for="mySelect7">午前</label> <br>
+                  <select style="margin-left: 114px;" id="mySelect7" onchange="displaySelectedValue()">
+                    <option value="1"></option>
+                    <option value="2">H R</option>
+                    <option value="3">朝礼</option>
+                    <option value="4">会議</option>
+                    <option value="5">安全展開</option>
+                  </select>
+                </p>
+
+                <p>
+                  <label style="margin-left: 30px;" class="column2" for="mySelect8">午後</label> <br>
+                  <select style="margin-left: 10px;" id="mySelect8" onchange="displaySelectedValue()">
+                    <option value="1"></option>
+                    <option value="2">H R</option>
+                    <option value="3">走り込み</option>
+                    <option value="4">委員会</option>
+                    <option value="5">昼礼</option>
+                  </select>
+                </p>
+
+                <p>
+                  <label style="margin-left: 116px;" class="column2" for="mySelect9">午前</label> <br>
+                  <select style="margin-left: 116px;" id="mySelect9" onchange="displaySelectedValue()">
+                    <option value="1"></option>
+                    <option value="2">H R</option>
+                    <option value="3">朝礼</option>
+                    <option value="4">会議</option>
+                    <option value="5">安全展開</option>
+                  </select>
+                </p>
+
+                <p>
+                  <label style="margin-left: 30px;" class="column2" for="mySelect10">午後</label> <br>
+                  <select style="margin-left: 10px;" id="mySelect10" onchange="displaySelectedValue()">
+                    <option value="1"></option>
+                    <option value="2">H R</option>
+                    <option value="3">走り込み</option>
+                    <option value="4">委員会</option>
+                    <option value="5">昼礼</option>
+                  </select>
+                </p>
+
+              </div>
+              <script src="issyuukannnonagare.js"></script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
 
 </html>
